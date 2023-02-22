@@ -32,6 +32,7 @@ php ../artisan serve
 ### Uruchom
 
 ```sh
+php artisan migrate:fresh
 php artisan serve
 ```
 
