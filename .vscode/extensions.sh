@@ -13,3 +13,4 @@ code --install-extension Vue.volar
 code --install-extension Vue.vscode-typescript-vue-plugin
 code --install-extension xabikos.JavaScriptSnippets
 code --install-extension DavidAnson.vscode-markdownlint
+code --install-extension dotjoshjohnson.xml
