@@ -10,16 +10,15 @@ import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n({ useScope: 'global' })
 const store = useAuthStore()
 const vFocus = { mounted: (el) => el.focus() }
-const confirm_services = ref(0)
+const confirm_services = ref(false)
 
 onMounted(() => {
 	store.clearError()
 })
 
 function onSubmit(e) {
-	store.scrollTop()
-
-	if (confirm_services.value == 1) {
+	if (confirm_services.value) {
+		store.scrollTop()
 		store.registerUser(new FormData(e.target))
 	} else {
 		alert(t('register.Confirm_services'))
@@ -66,7 +65,7 @@ function validatePass(e) {
 					</div>
 
 					<div class="full">
-						<button class="button" :title="$t('register.Register')">{{ $t('register.Register') }}</button>
+						<button class="button" :title="$t('register.Register')" :disabled="!confirm_services">{{ $t('register.Register') }}</button>
 					</div>
 
 					<div class="full">

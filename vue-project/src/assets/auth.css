@@ -79,6 +79,17 @@ button {
 button:hover {
 	filter: brightness(1.4);
 }
+
+button:disabled,
+button[disabled],
+button:disabled:hover,
+button[disabled]:hover {
+	border: 1px solid var(--divider);
+	background: transparent;
+	color: var(--divider);
+	filter: none;
+}
+
 .link-left {
 	float: left;
 	margin-top: 20px;

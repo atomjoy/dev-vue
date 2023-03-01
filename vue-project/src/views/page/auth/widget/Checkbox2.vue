@@ -1,6 +1,6 @@
 <template>
 	<div class="checkbox-line">
-		<input ref="input" class="checkbox" type="checkbox" :checked="checked" :value="value" :name="name" @change="updateInput" />
+		<input class="checkbox" type="checkbox" :checked="isChecked" :value="value" :name="name" @change="updateInput" />
 		<div class="checkmark">
 			<i class="fas fa-check dot"></i>
 		</div>
@@ -8,43 +8,38 @@
 	</div>
 </template>
 
-<script setup>
-import { ref, onMounted, toRefs, computed } from 'vue'
-
-const emit = defineEmits(['update:modelValue', 'change'])
-const props = defineProps({
-	name: { type: String },
-	modelValue: { type: [Array, Boolean] },
-	value: { type: String, required: true },
-	label: { type: String, required: true },
-})
-const { value, modelValue } = toRefs(props)
-const input = ref(null)
-
-onMounted(() => {
-	// input.value.focus()
-})
-
-const checked = computed(() => {
-	if (modelValue.value instanceof Array) {
-		return modelValue.value.includes(value.value)
-	}
-	return modelValue.value
-})
-
-function updateInput(event) {
-	let check = event.target.checked
-	if (modelValue.value instanceof Array) {
-		let newValue = [...modelValue.value]
-		if (check) {
-			newValue.push(value.value)
-		} else {
-			newValue.splice(newValue.indexOf(value.value), 1)
-		}
-		emit('update:modelValue', newValue)
-	} else {
-		emit('update:modelValue', check)
-	}
+<script>
+export default {
+	props: {
+		value: { type: String },
+		name: { type: String },
+		modelValue: { type: [Array, Boolean] },
+		label: { type: String, required: true },
+	},
+	computed: {
+		isChecked() {
+			if (this.modelValue instanceof Array) {
+				return this.modelValue.includes(this.value)
+			}
+			return this.modelValue == true
+		},
+	},
+	methods: {
+		updateInput(event) {
+			let isChecked = event.target.checked
+			if (this.modelValue instanceof Array) {
+				let newValue = [...this.modelValue]
+				if (isChecked) {
+					newValue.push(this.value)
+				} else {
+					newValue.splice(newValue.indexOf(this.value), 1)
+				}
+				this.$emit('update:modelValue', newValue)
+			} else {
+				this.$emit('update:modelValue', isChecked ? true : false)
+			}
+		},
+	},
 }
 </script>
 

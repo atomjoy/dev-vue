@@ -1,1 +1,0 @@
-import{l,d as c,m as p}from"../js/index.a2caae58.js";const i="/vue/png/auth-logo.png",_="/vue/webp/auth-foto.webp",m={__name:"PageTitle",props:{title:{type:String,default:"error404.title"}},setup(o){const n=o,{t,locale:s}=l({useScope:"global"}),e=n.title;return c(()=>{document.title=t(e)}),p(()=>s.value,a=>{document.title=t(e)}),(a,r)=>null}};export{m as _,i as a,_ as b};
