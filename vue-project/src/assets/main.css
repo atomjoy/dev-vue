@@ -1,35 +1,72 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+	box-sizing: border-box;
+	min-height: 100vh;
+	padding: 0px;
+	margin: 0px;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+#page-wraper {
+	box-sizing: border-box;
+	min-height: 100vh;
+	max-width: 1920px;
+	padding: 0px 2rem;
+	margin: 0 auto;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+a {
+	text-decoration: none;
+	transition: 0.4s;
+	color: var(--color);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	float: left;
+	width: 100%;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+@media (max-width: 1600px) {
+	:root {
+		--font-root: 18px;
+	}
+
+	#page-wraper {
+		max-width: 1600px;
+	}
+}
+
+@media (max-width: 1280px) {
+	:root {
+		--font-root: 15px;
+	}
+
+	#page-wraper {
+		max-width: 1280px;
+	}
+}
+
+@media (max-width: 1024px) {
+	:root {
+		--font-root: 14px;
+	}
+
+	#page-wraper {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	:root {
+		--font-root: 14px;
+	}
+
+	#page-wraper {
+		max-width: 100%;
+	}
 }

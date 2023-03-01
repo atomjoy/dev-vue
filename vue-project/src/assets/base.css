@@ -1,74 +1,146 @@
 /* color palette from <https://github.com/vuejs/theme> */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+	/* Width 1920 */
+	--font-family-base: 'Poppins', 'Segoe UI', sans-serif;
+	--font-family-mono: 'Fira Code', Consolas, monospace;
+	--font-root: 20px;
+	--padding-root: 2rem;
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+	/* bg */
+	--bg: #ffffff;
+	--bg-soft: #f5f5f5;
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+	/* text */
+	--color: #0055ff;
+	--color-text: #111111;
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+	/* divider */
+	--divider: #e1e6ef;
 
-  --section-gap: 160px;
+	/* button */
+	--btn-bg: #0055ff;
+	--btn-color: #ffffff;
+	--btn-border: #0055ff;
+	--btn-shadow: transparent;
+	--btn-padding: 1rem 2.5rem;
+
+	--btn-bg-hover: #0033ff;
+	--btn-color-hover: #ffffff;
+	--btn-border-hover: #0033ff;
+	--btn-shadow-hover: 0px 1px 3px rgba(0, 0, 0, 0.05);
+
+	/* input */
+	--inp-bg: transparent;
+	--inp-color: #111;
+	--inp-border: #e1e6ef;
+	--inp-shadow: transparent;
+	--inp-placeholder: #999;
+	--inp-padding: 1rem 1.5rem;
+
+	--inp-bg-hover: transparent;
+	--inp-color-hover: #111;
+	--inp-border-hover: #e1e6ef;
+	--inp-shadow-hover: 0px 0px 0px 5px rgba(0, 0, 0, 0.05);
+
+	--inp-bg-focus: transparent;
+	--inp-color-focus: #111;
+	--inp-border-focus: #0055ff;
+	--inp-shadow-focus: 0px 0px 0px 5px rgba(0, 0, 0, 0.05);
+
+	/* styles */
+	--section-gap: 160px;
+	--radius: 5px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+	:root {
+		/* bg */
+		--bg: #0a0a0a;
+		--bg-soft: #111111;
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+		/* text */
+		--color-text: #fdfdfd;
+		--color: #0055ff;
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+		/* divider */
+		--divider: #282828;
+
+		/* button */
+		--btn-bg: #0055ff;
+		--btn-color: #ffffff;
+		--btn-border: #0055ff;
+		--btn-shadow: transparent;
+
+		--btn-bg-hover: #0033ff;
+		--btn-color-hover: #ffffff;
+		--btn-border-hover: #0033ff;
+		--btn-shadow-hover: 0px 1px 3px rgba(0, 0, 0, 0.05);
+
+		/* input */
+		--inp-bg: transparent;
+		--inp-color: #fdfdfd;
+		--inp-border: #282828;
+		--inp-shadow: transparent;
+		--inp-placeholder: #282828;
+
+		--inp-bg-hover: transparent;
+		--inp-color-hover: #fefefe;
+		--inp-border-hover: #fefefe;
+		--inp-shadow-hover: 0px 0px 0px 5px rgba(255, 255, 255, 0.1);
+
+		--inp-bg-focus: transparent;
+		--inp-color-focus: #fefefe;
+		--inp-border-focus: #0055ff;
+		--inp-shadow-focus: 0px 0px 0px 5px rgba(255, 255, 255, 0.1);
+
+		/* styles */
+		--btn-padding: 1rem 1.5rem;
+		--inp-padding: 1rem 1.5rem;
+		--section-gap: 160px;
+		--radius: 5px;
+	}
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  position: relative;
-  font-weight: normal;
+	box-sizing: border-box;
+	outline: 0px none transparent;
+	text-decoration: none;
+}
+
+html {
+	font-size: var(--font-root);
+	font-family: var(--font-family-base);
+	margin: 0;
+	padding: 0px;
 }
 
 body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	min-height: 100vh;
+	color: var(--color-text);
+	background: var(--bg);
+	transition: color 0.5s, background-color 0.5s;
+	margin: 0;
+	padding: 0px;
+	overflow-y: scroll;
+}
+
+input,
+textarea,
+select {
+	outline: none;
+}
+
+::placeholder {
+	color: var(--inp-placeholder) !important;
+	font-family: var(--font-family-base);
+	font-size: 1rem;
+	font-weight: 500;
 }
