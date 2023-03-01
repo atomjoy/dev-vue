@@ -1,1 +1,0 @@
-import{u as t}from"../js/index.ab6a90b9.js";const s={data(){return{auth:t()}},mounted(){this.auth.logoutUser(),this.auth.message="",this.$i18n.locale=this.$i18n.fallbackLocale,this.$router.push("/login")}};export{s as default};
