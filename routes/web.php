@@ -20,7 +20,7 @@ Route::get('/welcome', function () {
 })->name('welcome');
 
 // Laravel account activation
-Route::get('/activate/{id}/{code}', [WebiActivate::class, 'index'])->middleware(['webi-locale']);
+// Route::get('/activate/{id}/{code}', [WebiActivate::class, 'index'])->middleware(['webi-locale']);
 
 // Vue
 Route::get('/', function () {

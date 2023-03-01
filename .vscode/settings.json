@@ -19,7 +19,7 @@
 	"files.trimTrailingWhitespace": true,
 
 	// Style
-	"editor.fontSize": 20,
+	"editor.fontSize": 18,
 	"editor.fontFamily": "'Fira Code',Consolas,monospace",
 	"editor.insertSpaces": true, // Use spaces no tabs
 	"editor.detectIndentation": false,
